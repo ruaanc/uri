@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Alarme {
+	public static void main(String[] args){
+		Scanner leitor = new Scanner(System.in);
+		int h1 = leitor.nextInt();
+		int m1 = leitor.nextInt();
+		int h2 = leitor.nextInt();
+		int m2 = leitor.nextInt();
+		while(!(h1 == 0 && m1 == 0 && h2 == 0 && m2 == 0)){
+
+			int total1 = h1 * 60 + m1;
+			int total2 = h2 * 60 + m2;
+			if(h1 > h2){
+				int soma = h2 * 60 + 24 * 60;
+				int totala = soma + m2;
+				System.out.println(totala - total1);
+			}
+			else if(h1 == h2){
+				if(m1 > m2){
+					int soma = h2 * 60 + 24 * 60;
+					int totala = soma + m2;
+					System.out.println(totala - total1);
+				}
+				else{
+					int total = total2 - total1;
+					System.out.println(total);
+				}
+			}
+			else{
+				int total = total2 - total1;
+				System.out.println(total);
+			}
+			h1 = leitor.nextInt();
+			m1 = leitor.nextInt();
+			h2 = leitor.nextInt();
+			m2 = leitor.nextInt();
+		}
+		leitor.close();
+	}
+}
